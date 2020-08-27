@@ -18,7 +18,7 @@
         var img = document.getElementById('pic');
         var name = document.getElementById('username');
         img.src = userNow2.photoURL;
-       // name.innerHTML = "Hello " + userNow2.displayName;
+        userName.innerHTML = "Hello " + userNow2.email;// userName.innerHTML = "Hello " + userNow2.displayName;
         if(userNow2.photoURL==null)
             img.src ="img/core-img/ANONYMOUS_USER.png";
         

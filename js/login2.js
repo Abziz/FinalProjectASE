@@ -20,7 +20,12 @@ var firebaseConfig = {
         let pass = document.querySelector("#pass").value;
         if(state === "login"&&email!=""&&pass!=""){
             firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
-                alert('Email or Password incorrect!!');
+				
+                //// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				window.alert("Error : " + errorMessage);
+				
                 location.reload();
             });
             
@@ -31,15 +36,15 @@ var firebaseConfig = {
     
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            var displayName = user.displayName;
+           /* var displayName = user.displayName;
             var email = user.email;
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
-            var providerData = user.providerData;
+            var providerData = user.providerData;*/
             location.href = "main.html";
-            console.log(email);
+            
         } else {
             firebase.auth().signOut();
         }
