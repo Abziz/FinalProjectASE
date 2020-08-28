@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.1.5
