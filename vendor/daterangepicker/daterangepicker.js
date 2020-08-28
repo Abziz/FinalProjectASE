@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
 * @version: 2.1.25
 * @author: Dan Grossman http://www.dangrossman.info/

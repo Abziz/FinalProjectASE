@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*!
  * animsition v4.0.2
  * A simple and easy jQuery plugin for CSS animated page transitions.
