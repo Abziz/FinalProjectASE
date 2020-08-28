@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon server/server.js",
     "test:lint": "eslint .",
-    "test:jest": "jest .",
-    "test": "npm run test:lint && npm run test:jest"
+    
+    "test": "npm run test:lint"
   },
   "keywords": [],
   "author": "",
