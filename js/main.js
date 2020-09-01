@@ -11,7 +11,6 @@ const firebaseConfig = {
 };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userNow2 = user;
@@ -20,6 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     img.src = userNow2.photoURL;
     name.innerHTML='Hello '+userNow2.email;
     // name.innerHTML = "Hello " + userNow2.displayName;
+    checkIfManager(userNow2);
     if (userNow2.photoURL==null) {
       img.src ='img/core-img/ANONYMOUS_USER.png';
     }
@@ -27,6 +27,20 @@ firebase.auth().onAuthStateChanged(function(user) {
     window.location.href = 'login.html';
   }
 });
+function checkIfManager(user) {
+  const ref = firebase.database().ref();
+  const userM=user.uid;
+  // eslint-disable-next-line max-len
+  ref.child('Users').child(userM).once('value', function(snap) { // once - only for one time connected
+    snap.forEach(function(item) {
+      const itemVal = item.val();
+      console.log(itemVal);
+      if (itemVal.Status==0) {// if manager 1
+        document.getElementById('mang').style.visibility = 'hidden';
+      }
+    });
+  });
+}
 /**
  * logout.
  */

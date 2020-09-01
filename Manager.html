@@ -6,10 +6,18 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+
+   
+    
+    
+    <script type="text/javascript" src="js/manager.js"></script>
+
     <!-- The above 4 meta tags *Must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title> Grades-Education</title>
+    <title> Manager Page</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -89,7 +97,63 @@
     <section class="popular-courses-area section-padding-100">
         <div class="container">
             <div class="row">   
+            
+            <fieldset>
+                <legend><span class="section"></span>Add teacher</legend>
+                <label class="" for="name">Name:</label>
+                <input type="text" name="name" value="" id="name" required />
+                <label class="" for="email">Email:</label>
+                <input type="email" name="email" value="" id="email" required />
+                <label for="password">password:</label>
+                <input type="password" name="password" value="" id="password" required />
+                <label for="status">status:</label>
+                <select id = "status">
+                    <option value = "0">Teacher</option>
+                    <option value = "1">Manager</option>
+                </select>
+                <button onclick="AddTeacherSubmit()">ADD</button>
+              </fieldset>
             </div>
+            <br/>
+            <div class="row"> 
+              <fieldset>
+                <legend><span class="section"></span>Add Course</legend>
+                <label class="" for="nameC">Name:</label>
+                <input type="text" name="nameC" value="" id="nameC" required />
+                <label class="" for="idC">ID:</label>
+                <input type="text" name="idC" value="" id="idC" required />
+                <label for="subject">subject:</label>
+                <input type="subject" name="subject" value="" id="subject" required />
+                <label for="teacher">teacher:</label>
+                <select id="teachers"></select> 
+                <button onclick="AddCourseSubmit()">ADD</button>
+              </fieldset>
+            </div>
+            <br/>
+            <div class="row"> 
+              <fieldset>
+                <legend><span class="section"></span>Add Student</legend>
+                <label class="" for="nameS">Name:</label>
+                <input type="text" name="nameS" value="" id="nameS" required />
+                <label class="" for="IdS">ID:</label>
+                <input type="text" name="idS" value="" id="idS" required />
+                <button onclick="AddStudentSubmit()">ADD</button>
+                </fieldset>
+            </div>
+        <br/>
+            <div class="row"> 
+              <fieldset>
+                <legend><span class="section"></span>Add Student to Course</legend>
+                <label for="Courses">Courses:</label>
+                <select id="Courses"></select>
+                <label for="Students">Students:</label>
+                <select id="Students"></select>
+                <button onclick="AddStudentToCourseSubmit()">ADD</button>
+              </fieldset>
+          </div>
+              
+          
+                
         </div>
     </section>
     <!-- ##### Area End ##### -->
