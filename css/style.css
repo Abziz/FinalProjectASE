@@ -323,9 +323,9 @@ textarea:focus {
 /* Button */
 .clever-btn {
   display: inline-block;
-  min-width: 160px;
+  min-width: 260px;
   height: 40px;
-  background-color: #3762f0;
+  background-color: #ccc;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;

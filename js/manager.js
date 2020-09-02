@@ -52,6 +52,55 @@ function out() {
     alert('Could not logout!');
   });
 }
+// ////////////////////////Insert menu/////////////////////////////////////////
+let flagTS=0;
+// eslint-disable-next-line no-unused-vars
+function FunctionDivSTC() {
+  const T = document.getElementById('DivSTC');
+  if (flagTS==1) {
+    T.style.display='none';
+    flagTS=0;
+  } else {
+    T.style.display = 'block';// <-- Set it to block
+    flagTS=1;
+  }
+}
+let flagT=0;
+// eslint-disable-next-line no-unused-vars
+function FunctionDivT() {
+  const T = document.getElementById('DivT');
+  if (flagT==1) {
+    T.style.display='none';
+    flagT=0;
+  } else {
+    T.style.display = 'block';// <-- Set it to block
+    flagT=1;
+  }
+}
+let flagC=0;
+// eslint-disable-next-line no-unused-vars
+function FunctionDivC() {
+  const T = document.getElementById('DivC');
+  if (flagC==1) {
+    T.style.display='none';
+    flagC=0;
+  } else {
+    T.style.display = 'block';// <-- Set it to block
+    flagC=1;
+  }
+}
+let flagS=0;
+// eslint-disable-next-line no-unused-vars
+function FunctionDivS() {
+  const T = document.getElementById('DivS');
+  if (flagS==1) {
+    T.style.display='none';
+    flagS=0;
+  } else {
+    T.style.display = 'block';// <-- Set it to block
+    flagS=1;
+  }
+}
 // /////////////////////AddTeacher//////////////////////////////////////////////
 const secondaryApp = firebase.initializeApp(firebaseConfig, 'Secondary');
 

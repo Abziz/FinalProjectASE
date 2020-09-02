@@ -15,7 +15,8 @@
        // "no-tabs":"off","indent":["error","tab"],
        "linebreak-style": [
         "error",
-        "windows"
+        "windows",
+        "unix"
     ]
     ,"require-jsdoc":"off"
 }         
