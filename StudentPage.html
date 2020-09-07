@@ -8,8 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *Must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- Title -->
-    <title> Grades-Education</title>
+
+    <meta charset="utf-8">
+    <title>Student Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/button.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	
+    <script  src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAUe7kJyFTBZBmKqjdIYR0IIVdHgcrJHrU",
+    authDomain: "finalprojectase-fa181.firebaseapp.com",
+    databaseURL: "https://finalprojectase-fa181.firebaseio.com",
+    projectId: "finalprojectase-fa181",
+    storageBucket: "finalprojectase-fa181.appspot.com",
+    messagingSenderId: "649915692568",
+    appId: "1:649915692568:web:24666913ce7d2d43a3756d"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+ </script>
+
+
+
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -62,7 +94,7 @@
                             <ul>
                                 <li><a href="main.html">Home</a></li>
                                 <li><a href="Courses.html">My Courses</a></li>
-                                <li><a href="Manager.html">Manager</a></li>
+                                <li id="mang"><a href="Manager.html">Manager</a></li>
                             </ul>
 
                         </div>
@@ -94,6 +126,51 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+    <p id="demo"></p>
+    <div id="pdf2htmldiv">
+<div class="container">
+  <h1 id="bigTextEvaluationStudents"></h1>
+  <h3>My courses</h3>
+  <table class="table table-striped" id="table1">
+        <head>
+            <tr>
+                <th>Courses</th>
+                <th></th>
+                
+            </tr>
+        </head>
+    </table>
+</div>
+  </div>
+
+
+<script src="js/studentpage.js"></script> 
+<br></br>
+<!--  
+<a href="javascript:pdfToHTML()">
+<div class="wrapper">
+<form action="Grade sheet.html">
+<input type="submit" value="Grade sheet" />
+</form>
+</div>
+
+</a>
+
+-->
+<div class="wrapper">  
+<form action="Grade sheet.html">
+  <!--   <input type="submit" value="Grade sheet" onclick=" gradeSheet()"> -->
+    <button class="button" onclick= "gradeSheet()">grade sheet</button>
+    </form>
+</div>
+
+
+
     <!-- ##### Area End ##### -->
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
