@@ -34,12 +34,7 @@ function enterOnlyIfManager(user) {
   ref.child('Users').child(userM).once('value', function(snap) { // once - only for one time connected
     snap.forEach(function(item) {
       const itemVal = item.val();
-<<<<<<< HEAD
       if (itemVal.Status==0) {//  manager=1
-=======
-      console.log(itemVal);
-      if (itemVal.Status==0) {// if manager 1
->>>>>>> 8950e7b08fc2e4bdc9976ed17e457eb5e3f6dc5f
         window.location.href = 'main.html';
       }
     });
@@ -105,7 +100,6 @@ function FunctionDivS() {
     flagS=1;
   }
 }
-<<<<<<< HEAD
 let flagGS=0;
 // eslint-disable-next-line no-unused-vars
 function FunctionDivGradeSheet() {
@@ -118,8 +112,6 @@ function FunctionDivGradeSheet() {
     flagGS=1;
   }
 }
-=======
->>>>>>> 8950e7b08fc2e4bdc9976ed17e457eb5e3f6dc5f
 // /////////////////////AddTeacher//////////////////////////////////////////////
 const secondaryApp = firebase.initializeApp(firebaseConfig, 'Secondary');
 
@@ -193,10 +185,7 @@ window.onload = function() {
       }
     }
     addStudentToCourseLoad();
-<<<<<<< HEAD
     selsectStudentGradeSheetLoad();
-=======
->>>>>>> 8950e7b08fc2e4bdc9976ed17e457eb5e3f6dc5f
   });
 };
 // eslint-disable-next-line no-unused-vars
@@ -275,7 +264,6 @@ function addStudentToCourseLoad() {// call from onload in AddCoure area.
 function AddStudentToCourseSubmit(e) {
   const courseId = document.getElementById('Courses').value;
   const studentId = document.getElementById('Students').value;
-<<<<<<< HEAD
   // eslint-disable-next-line max-len
   const courseText= document.getElementById('Courses').options[document.getElementById('Courses').selectedIndex].text;
   const updates = {
@@ -317,13 +305,3 @@ function sendToGradeSheetSubmit(e) {
   localStorage.setItem('StudentIdFromManager', studentId);
   window.location.href = 'Grade sheet.html';
 }
-=======
-
-  const updates = {
-    [`student_enrolments/${studentId}/${courseId}`]: true,
-    [`course_enrolments/${courseId}/${studentId}`]: true,
-  };
-  firebase.database().ref().update(updates);
-  demo();
-}
->>>>>>> 8950e7b08fc2e4bdc9976ed17e457eb5e3f6dc5f

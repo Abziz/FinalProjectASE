@@ -321,7 +321,6 @@ textarea:focus {
       right: 30px; } }
 
 /* Button */
-<<<<<<< HEAD
 .ADDGradeDiv
 {
   text-align: center;
@@ -333,11 +332,6 @@ textarea:focus {
   display: inline-block;
   min-width: 430px;
   max-width: 430px;
-=======
-.clever-btn {
-  display: inline-block;
-  min-width: 260px;
->>>>>>> 8950e7b08fc2e4bdc9976ed17e457eb5e3f6dc5f
   height: 40px;
   background-color: #ccc;
   font-weight: 600;
