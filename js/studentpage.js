@@ -106,22 +106,22 @@ firebase.database().ref().child('student_enrolments').child(studentid).once('val
     const itemVal = item.val();
     courseStudent.push(itemVal);
   });
-    console.log(courseStudent);
+  console.log(courseStudent);
   for (let i =0; i < courseStudent.length; i++) {
     const tr = document.createElement('tr');
-     const trValues = [courseStudent[i].Name, courseStudent[i].Grade];
-     console.log(trValues[i]);
+    const trValues = [courseStudent[i].Name, courseStudent[i].Grade];
+    console.log(trValues[i]);
 
     for (let j = 0; j < trValues.length-1; j++) {
       const td = document.createElement('td');
-     // const td1 = document.createElement('td');
-	 
-     //  td.textContent = courseStudent[j].Name;
-     //  td1.textContent = courseStudent[j].Grade;
-       td.textContent = trValues[j];
-       //td1.textContent = trValues[j+1];
+      // const td1 = document.createElement('td');
+
+      //  td.textContent = courseStudent[j].Name;
+      //  td1.textContent = courseStudent[j].Grade;
+      td.textContent = trValues[j];
+      // td1.textContent = trValues[j+1];
       tr.appendChild(td);
-      //tr.appendChild(td1);
+      // tr.appendChild(td1);
     }
 
     table1.appendChild(tr);
@@ -130,7 +130,6 @@ firebase.database().ref().child('student_enrolments').child(studentid).once('val
 
 
 fragment.appendChild(table);
- document.body.appendChild(fragment);
-
+document.body.appendChild(fragment);
 
 
