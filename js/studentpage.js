@@ -1,5 +1,5 @@
 
-// var
+// var selectStudentId
 const studentid = localStorage.getItem('selectStudentId');
 // eslint-disable-next-line no-var
 var student = [];
@@ -67,7 +67,7 @@ function out() {
     alert('Could not logout!');
   });
 }
-
+/*
 const fragment = document.createDocumentFragment();
 const table = document.createElement('table');
 
@@ -94,3 +94,43 @@ query.once('value').then(function(snapshot) {
 
 fragment.appendChild(table);
 document.body.appendChild(fragment);
+*/
+
+const fragment = document.createDocumentFragment();
+const table = document.createElement('table');
+const courseStudent = [];
+// firebase.database().ref().child('student_enrolments').child(studentid)
+// eslint-disable-next-line max-len
+firebase.database().ref().child('student_enrolments').child(studentid).once('value', function(snap) {// once-only for one time connected
+  snap.forEach(function(item) {
+    const itemVal = item.val();
+    courseStudent.push(itemVal);
+  });
+    console.log(courseStudent);
+  for (let i =0; i < courseStudent.length; i++) {
+    const tr = document.createElement('tr');
+     const trValues = [courseStudent[i].Name, courseStudent[i].Grade];
+     console.log(trValues[i]);
+
+    for (let j = 0; j < trValues.length-1; j++) {
+      const td = document.createElement('td');
+     // const td1 = document.createElement('td');
+	 
+     //  td.textContent = courseStudent[j].Name;
+     //  td1.textContent = courseStudent[j].Grade;
+       td.textContent = trValues[j];
+       //td1.textContent = trValues[j+1];
+      tr.appendChild(td);
+      //tr.appendChild(td1);
+    }
+
+    table1.appendChild(tr);
+  }
+});
+
+
+fragment.appendChild(table);
+ document.body.appendChild(fragment);
+
+
+
