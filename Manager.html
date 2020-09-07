@@ -6,10 +6,18 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+
+   
+    
+    
+    <script type="text/javascript" src="js/manager.js"></script>
+
     <!-- The above 4 meta tags *Must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title> Grades-Education</title>
+    <title> Manager Page</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -88,7 +96,91 @@
     <!-- #####  Area Start ##### -->
     <section class="popular-courses-area section-padding-100">
         <div class="container">
-            <div class="row">   
+            <div class="row">
+                <fieldset>
+                    <div>
+                        <button class="btn clever-btn w-100" onclick="FunctionDivT()">Add Teacher</button>
+                    </div>
+                    <br/>
+                    <div id="DivT" style="display:none"> 
+                        <label class="" for="name">Name:</label>
+                        <input type="text" name="name" value="" id="name" required />
+                        <br/>
+                        <label class="" for="email">Email:</label>
+                        <input type="email" name="email" value="" id="email" required />
+                        <br/>
+                        <label for="password">password:</label>
+                        <input type="password" name="password" value="" id="password" required />
+                        <br/>
+                        <label for="status">status:</label>
+                        <select id = "status">
+                            <option value = "0">Teacher</option>
+                            <option value = "1">Manager</option>
+                        </select>
+                        <br/>
+                        <button onclick="AddTeacherSubmit()">ADD</button>
+                    </div>  
+                </fieldset> 
+            </div>
+            <br/>
+            <div class="row"> 
+                <fieldset>
+                    <div>
+                        <button class="btn clever-btn w-100" onclick="FunctionDivC()">Add Course</button>
+                    </div>
+                    <br/>
+                    <div id="DivC" style="display:none">
+                        <label class="" for="idC">ID:</label>
+                        <input type="text" name="idC" value="" id="idC" required />
+                        <br/>
+                        <label class="" for="nameC">Name:</label>
+                        <input type="text" name="nameC" value="" id="nameC" required />
+                        <br/>
+                        <label for="subject">Subject:</label>
+                        <input type="subject" name="subject" value="" id="subject" required />
+                        <br/>
+                        <label for="teacher">Teacher:</label>
+                        <select id="teachers"></select> 
+                        <br/>
+                        <button onclick="AddCourseSubmit()">ADD</button>
+                    </div>  
+                </fieldset> 
+            </div>
+            <br/>
+            <div class="row">
+                <fieldset>
+                    <div>
+                        <button class="btn clever-btn w-100" onclick="FunctionDivS()">Add Student</button>
+                    </div>
+                    <br/>
+                    <div id="DivS" style="display:none">
+                        <label class="" for="IdS">ID:</label>
+                        <input type="text" name="idS" value="" id="idS" required />
+                        <br/>  
+                        <label class="" for="nameS">Name:</label>
+                        <input type="text" name="nameS" value="" id="nameS" required />
+                        <br/>
+                        <button onclick="AddStudentSubmit()">ADD</button>
+                    </div>  
+                </fieldset> 
+            </div>
+            <br/>
+            <div class="row"> 
+                <fieldset>
+                    <div>
+                        <button class="btn clever-btn w-100" onclick="FunctionDivSTC()">Add Student to Course</button>
+                    </div>
+                    <br/>
+                    <div id="DivSTC" style="display:none">
+                        <label for="Courses">Courses:</label>
+                        <select id="Courses"></select>
+                        <br/>
+                        <label for="Students">Students:</label>
+                        <select id="Students"></select>
+                        <br/>
+                        <button onclick="AddStudentToCourseSubmit()">ADD</button> 
+                    </div>  
+                </fieldset>  
             </div>
         </div>
     </section>

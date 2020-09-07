@@ -1,18 +1,4 @@
 
-// localStorage.setItem("key","value");
-// var lastname = localStorage.getItem("key");
-// localStorage.removeItem("key");
-/*
- //check if user is signed in.
-  var user = firebase.auth().currentUser;
-
-if (user) {
-  // User is signed in.
-  document.getElementById('demo').innerHTML = user;
-} else {
-  // No user is signed in.
-}
- */
 // var
 const studentid = localStorage.getItem('selectStudentId');
 // eslint-disable-next-line no-var
@@ -64,7 +50,6 @@ function checkIfManager(user) {
   ref.child('Users').child(userM).once('value', function(snap) {
     snap.forEach(function(item) {
       const itemVal = item.val();
-      console.log(itemVal);
       if (itemVal.Status==0) {// if manager 1
         document.getElementById('mang').style.visibility = 'hidden';
       }
