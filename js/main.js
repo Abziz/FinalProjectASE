@@ -34,7 +34,6 @@ function checkIfManager(user) {
   ref.child('Users').child(userM).once('value', function(snap) { // once - only for one time connected
     snap.forEach(function(item) {
       const itemVal = item.val();
-      console.log(itemVal);
       if (itemVal.Status==0) {// if manager 1
         document.getElementById('mang').style.visibility = 'hidden';
       }

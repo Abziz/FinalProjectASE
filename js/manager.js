@@ -34,8 +34,7 @@ function enterOnlyIfManager(user) {
   ref.child('Users').child(userM).once('value', function(snap) { // once - only for one time connected
     snap.forEach(function(item) {
       const itemVal = item.val();
-      console.log(itemVal);
-      if (itemVal.Status==0) {// if manager 1
+      if (itemVal.Status==0) {//  manager=1
         window.location.href = 'main.html';
       }
     });
@@ -99,6 +98,18 @@ function FunctionDivS() {
   } else {
     T.style.display = 'block';// <-- Set it to block
     flagS=1;
+  }
+}
+let flagGS=0;
+// eslint-disable-next-line no-unused-vars
+function FunctionDivGradeSheet() {
+  const T = document.getElementById('DivGradeSheet');
+  if (flagGS==1) {
+    T.style.display='none';
+    flagGS=0;
+  } else {
+    T.style.display = 'block';// <-- Set it to block
+    flagGS=1;
   }
 }
 // /////////////////////AddTeacher//////////////////////////////////////////////
@@ -174,6 +185,7 @@ window.onload = function() {
       }
     }
     addStudentToCourseLoad();
+    selsectStudentGradeSheetLoad();
   });
 };
 // eslint-disable-next-line no-unused-vars
@@ -252,11 +264,44 @@ function addStudentToCourseLoad() {// call from onload in AddCoure area.
 function AddStudentToCourseSubmit(e) {
   const courseId = document.getElementById('Courses').value;
   const studentId = document.getElementById('Students').value;
-
+  // eslint-disable-next-line max-len
+  const courseText= document.getElementById('Courses').options[document.getElementById('Courses').selectedIndex].text;
   const updates = {
-    [`student_enrolments/${studentId}/${courseId}`]: true,
-    [`course_enrolments/${courseId}/${studentId}`]: true,
+    [`course_enrolments/${courseId}/${studentId}`]: `${studentId}`,
   };
   firebase.database().ref().update(updates);
+  // eslint-disable-next-line max-len
+  firebase.database().ref().child('student_enrolments').child(studentId).child(courseId).set({
+    Name: courseText,
+    ID: courseId,
+    Grade: 'No Grade',
+  });
   demo();
+}
+// /////////////////////////////sendToGradeSheet///////////////////////////////
+const StudentsGradeSheetArr = [];
+function selsectStudentGradeSheetLoad() {// call from onload in AddCoure area.
+  const ref = firebase.database().ref();
+  // eslint-disable-next-line max-len
+  ref.child('Students').once('value', function(snap) {// once-only for one time connected
+    snap.forEach(function(item) {
+      const itemVal = item.val();
+      StudentsGradeSheetArr.push(itemVal);
+    });
+    const selectT = document.getElementById('StudentsG');
+    for (let i = 0; i < StudentsGradeSheetArr.length; i++) {
+      // eslint-disable-next-line max-len
+      const opt = StudentsGradeSheetArr[i].Name+' ,ID:'+StudentsGradeSheetArr[i].ID;
+      const el = document.createElement('option');
+      el.textContent = opt;
+      el.value = StudentsGradeSheetArr[i].ID;
+      selectT.appendChild(el);
+    }
+  });
+};
+// eslint-disable-next-line no-unused-vars
+function sendToGradeSheetSubmit(e) {
+  const studentId = document.getElementById('StudentsG').value;
+  localStorage.setItem('StudentIdFromManager', studentId);
+  window.location.href = 'Grade sheet.html';
 }

@@ -94,6 +94,9 @@
     </div>
     <!-- ##### Breadcumb Area End ##### -->
     <!-- #####  Area Start ##### -->
+    <div style="height:20px; text-align:left; padding-left: 100px;padding-top: 40px;">
+        <h2 style="color:blue;font-size:40px;">Select an option</h2>
+    </div>
     <section class="popular-courses-area section-padding-100">
         <div class="container">
             <div class="row">
@@ -104,21 +107,23 @@
                     <br/>
                     <div id="DivT" style="display:none"> 
                         <label class="" for="name">Name:</label>
-                        <input type="text" name="name" value="" id="name" required />
+                        <input type="text" name="name" class="form-control" id="name" placeholder=Name required/>
                         <br/>
-                        <label class="" for="email">Email:</label>
-                        <input type="email" name="email" value="" id="email" required />
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com"required/>
                         <br/>
-                        <label for="password">password:</label>
-                        <input type="password" name="password" value="" id="password" required />
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password"required />
                         <br/>
-                        <label for="status">status:</label>
-                        <select id = "status">
+                        <label for="status">Status:</label>
+                        <select class="form-control" id = "status">
                             <option value = "0">Teacher</option>
                             <option value = "1">Manager</option>
                         </select>
                         <br/>
-                        <button onclick="AddTeacherSubmit()">ADD</button>
+                        <div style=text-align:center;>
+                        <button style="width: 70px;"onclick="AddTeacherSubmit()">ADD</button>
+                        </div>
                     </div>  
                 </fieldset> 
             </div>
@@ -131,18 +136,20 @@
                     <br/>
                     <div id="DivC" style="display:none">
                         <label class="" for="idC">ID:</label>
-                        <input type="text" name="idC" value="" id="idC" required />
+                        <input type="text" class="form-control" name="idC" value="" id="idC" placeholder=ID required />
                         <br/>
                         <label class="" for="nameC">Name:</label>
-                        <input type="text" name="nameC" value="" id="nameC" required />
+                        <input type="text" class="form-control name="nameC" value="" id="nameC" placeholder=Name required />
                         <br/>
                         <label for="subject">Subject:</label>
-                        <input type="subject" name="subject" value="" id="subject" required />
+                        <input type="subject" class="form-control name="subject" value="" id="subject" placeholder=Subject required />
                         <br/>
                         <label for="teacher">Teacher:</label>
-                        <select id="teachers"></select> 
+                        <select class="form-control" id="teachers"></select> 
                         <br/>
-                        <button onclick="AddCourseSubmit()">ADD</button>
+                        <div style=text-align:center;>
+                            <button style="width: 70px;"onclick="AddCourseSubmit()">ADD</button>
+                            </div>
                     </div>  
                 </fieldset> 
             </div>
@@ -155,12 +162,14 @@
                     <br/>
                     <div id="DivS" style="display:none">
                         <label class="" for="IdS">ID:</label>
-                        <input type="text" name="idS" value="" id="idS" required />
+                        <input class="form-control" type="text" name="idS" value="" id="idS" placeholder=ID required />
                         <br/>  
                         <label class="" for="nameS">Name:</label>
-                        <input type="text" name="nameS" value="" id="nameS" required />
+                        <input class="form-control" type="text" name="nameS" value="" id="nameS" placeholder=Name required />
                         <br/>
-                        <button onclick="AddStudentSubmit()">ADD</button>
+                        <div style=text-align:center;>
+                            <button style="width: 70px;"onclick="AddStudentSubmit()">ADD</button>
+                            </div>
                     </div>  
                 </fieldset> 
             </div>
@@ -173,12 +182,31 @@
                     <br/>
                     <div id="DivSTC" style="display:none">
                         <label for="Courses">Courses:</label>
-                        <select id="Courses"></select>
+                        <select class="form-control" id="Courses"></select>
                         <br/>
                         <label for="Students">Students:</label>
-                        <select id="Students"></select>
+                        <select class="form-control" id="Students"></select>
                         <br/>
-                        <button onclick="AddStudentToCourseSubmit()">ADD</button> 
+                        <div style=text-align:center;>
+                            <button style="width: 70px;"onclick="AddStudentToCourseSubmit()">ADD</button>
+                            </div>
+                    </div>  
+                </fieldset>  
+            </div>
+            <br/>
+            <div class="row"> 
+                <fieldset>
+                    <div>
+                        <button class="btn clever-btn w-100" onclick="FunctionDivGradeSheet()">Select a student for issue of Grade sheet</button>
+                    </div>
+                    <br/>
+                    <div id="DivGradeSheet" style="display:none">
+                        <label for="StudentsG">Students:</label>
+                        <select class="form-control" id="StudentsG"></select>
+                        <br/>
+                        <div style=text-align:center;>
+                            <button style="width: 70px;"onclick="sendToGradeSheetSubmit()">ADD</button>
+                            </div>
                     </div>  
                 </fieldset>  
             </div>

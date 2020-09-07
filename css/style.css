@@ -321,9 +321,17 @@ textarea:focus {
       right: 30px; } }
 
 /* Button */
+.ADDGradeDiv
+{
+  text-align: center;
+  width:350px;
+  display:none;
+  margin-left: 18%;
+}
 .clever-btn {
   display: inline-block;
-  min-width: 260px;
+  min-width: 430px;
+  max-width: 430px;
   height: 40px;
   background-color: #ccc;
   font-weight: 600;
