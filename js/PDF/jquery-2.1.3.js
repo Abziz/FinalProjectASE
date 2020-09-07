@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/

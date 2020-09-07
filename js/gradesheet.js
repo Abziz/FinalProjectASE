@@ -46,65 +46,42 @@ function out() {
   });
 }
 
-// var
 
 const fragment = document.createDocumentFragment();
 const table = document.createElement('table');
 const courseStudent = [];
 // eslint-disable-next-line max-len
 // const query = firebase.database().ref('/student_enrolments/204666543/0000002');
-// studentid = 21111190;
-// console.log(21111190);
 
-
+// firebase.database().ref().child('student_enrolments').child(studentid)
 // eslint-disable-next-line max-len
 firebase.database().ref().child('student_enrolments').child(studentid).once('value', function(snap) {// once-only for one time connected
   snap.forEach(function(item) {
     const itemVal = item.val();
     courseStudent.push(itemVal);
   });
-
-
   for (let i =0; i < courseStudent.length; i++) {
     const tr = document.createElement('tr');
     //  const trValues = [courseStudent[i].Name, courseStudent[i].Grade];
-    console.log(courseStudent[i].Name);
-    for (let i = 0; i < courseStudent.length; i++) {
+    // console.log(courseStudent[i].Name);
+
+    for (let j = 0; j < courseStudent.length; j++) {
       const td = document.createElement('td');
+      const td1 = document.createElement('td');
+      // Array(120).fill('\xa0').join('')+
       // eslint-disable-next-line max-len
-      td.textContent = courseStudent[i].Name + Array(140).fill('\xa0').join('')+courseStudent[i].Grade;
-      // td.textContent = trValues[i]+Array(30).fill('\xa0').join('');
-      // td.textContent = trValues[i]+Array(30).fill('\xa0').join('');
+      td.textContent = courseStudent[j].Name;
+      td1.textContent = courseStudent[j].Grade;
+      // eslint-disable-next-line max-len
+      // td.innerText = courseStudent[i].Name+Array(120).fill('\xa0').join('')+courseStudent[i].Grade;
       tr.appendChild(td);
-
-      /*
-    if (childSnapshot.key == 'Name') {
-      // document.getElementById('demo').innerHTML = keys[0];
-      td.textContent = childSnapshot.val()+Array(30).fill('\xa0').join('');
-       td.textContent = trValues[i]+Array(30).fill('\xa0').join('');
-      tr.appendChild(td);
-    }
-    if (childSnapshot.key == 'Grade') {
-      td.textContent = childSnapshot.val()+Array(30).fill('\xa0').join('');
-      // td.textContent = trValues[i]+Array(30).fill('\xa0').join('');
-    }
-    */
-
-
-      // tr.appendChild(td);
+      tr.appendChild(td1);
     }
 
     table1.appendChild(tr);
   }
 });
+
 fragment.appendChild(table);
 document.body.appendChild(fragment);
 
-
-/*
-for (let i=0; i < keys.length; i++) {
-  document.getElementById('demo').innerHTML = keys[0];
-}
-
-*/
-// document.getElementById('demo').innerHTML = keys[0];

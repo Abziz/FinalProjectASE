@@ -1,3 +1,4 @@
+/* eslint-disable */
 function pdfToHTML(){
 var pdf = new jsPDF('p', 'pt', 'letter');
 source = $('#pdf2htmldiv')[0];
