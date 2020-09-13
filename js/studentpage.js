@@ -38,7 +38,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       img.src ='img/core-img/ANONYMOUS_USER.png';
     }
   } else {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }
 });
 
@@ -62,7 +62,7 @@ function checkIfManager(user) {
 // eslint-disable-next-line no-unused-vars
 function out() {
   firebase.auth().signOut().then(function() {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }).catch(function(error) {
     alert('Could not logout!');
   });
